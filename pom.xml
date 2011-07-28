@@ -19,6 +19,7 @@
   <!-- Project Modules -->
   <modules>
   	<module>generic-services</module>
+  	<module>generic-hibernate-dao</module>
   </modules>
   
   <!-- Project Informations -->	  
