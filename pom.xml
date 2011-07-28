@@ -1,9 +1,145 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
+
+  <parent>
+     <groupId>br.pa.capanema</groupId>
+     <artifactId>base</artifactId>
+     <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <!-- Project Identification-->
   <groupId>br.pa.capanema</groupId>
   <artifactId>plus-framework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
+  
+  
+  <!-- Project Modules -->
+  <modules>
+  	<module>generic-services</module>
+  </modules>
+  
+  <!-- Project Informations -->	  
   <name>Plus Framework</name>
   <description>Plus Framework</description>
+  <url>https://github.com/thiagosoares/plus-framework</url>
+  <inceptionYear>2011</inceptionYear>
+  <developers>
+    <developer>
+      <id>thiago.soares</id>
+      <name>Thiago Fernandes Soares</name>
+      <email>tfs.capanema@gmail.com</email>
+      <organization>POWER</organization>
+      <timezone>-3</timezone>
+      <roles>
+      	<role>Architect</role>
+      	<role>Developer</role>
+      	<role>Design</role>
+      </roles>
+    </developer>
+  </developers>
+  
+  <profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<environment.properties>environment/dev</environment.properties>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						<version>1.2</version>
+						<configuration>
+							<connectionType>connection</connectionType>
+						</configuration>
+						<!-- <executions>
+						
+							<execution>
+								<id>fetch-feature</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>export</goal>
+								</goals>
+
+								<configuration>
+									<connectionType>connection</connectionType>
+									<developerConnectionUrl>scm:svn:http://anonsvn.jboss.org/repos/richfaces/branches/examples-data/photoapp/images/Upload</developerConnectionUrl>
+									<skipExportIfExists>true</skipExportIfExists>
+									<exportDirectory>src/main/images/full</exportDirectory>
+								</configuration>
+							</execution>
+						</executions> -->
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		
+		<profile>
+			<id>release</id>
+			<properties>
+				<environment.properties>environment/release</environment.properties>
+			</properties>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						<version>1.2</version>
+						<configuration>
+							<connectionType>connection</connectionType>
+						</configuration>
+						<!-- <executions>
+							<execution>
+								<id>fetch-feature</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>export</goal>
+								</goals>
+
+								<configuration>
+									<connectionType>connection</connectionType>
+									<developerConnectionUrl>scm:svn:http://anonsvn.jboss.org/repos/richfaces/branches/examples-data/photoapp/images/Upload</developerConnectionUrl>
+									<skipExportIfExists>true</skipExportIfExists>
+									<exportDirectory>src/main/images/full</exportDirectory>
+								</configuration>
+							</execution>
+						</executions> -->
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+  
+<!-- Enviroment configurations-->
+  <!-- 
+  <issueManagement>
+    <system>Bugzilla</system>
+    <url>http://www.dds.prodepa.gov.br/bugzilla/</url>
+  </issueManagement>
+  <scm>
+    <url>scm:svn:http://svn.dds.prodepa.gov.br/private/${project.groupId}/${project.artifactId}/codigo_fonte/trunk</url>
+    <connection>scm:svn:http://svn.dds.prodepa.gov.br/private/${project.groupId}/${project.artifactId}/codigo_fonte/trunk</connection>
+    <developerConnection>scm:svn:http://svn.dds.prodepa.gov.br/private/${project.groupId}/${project.artifactId}/codigo_fonte/trunk</developerConnection>
+  </scm> 
+  <distributionManagement>
+    <site>
+      <id>${project.artifactId}</id>
+      <name>WebSite do projeto ${projectName}</name>
+      <url>scp://fenix.prodepa.gov.br/usr/local/apache2/htdocs/sites/${project.artifactId}</url>
+    </site>
+  </distributionManagement>
+   -->
+  
+  
+  
+  
 </project>
