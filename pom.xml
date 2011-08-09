@@ -4,22 +4,19 @@
 
   <parent>
      <groupId>br.pa.capanema</groupId>
-     <artifactId>base</artifactId>
+     <artifactId>general-base</artifactId>
      <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <!-- Project Identification-->
-  <groupId>br.pa.capanema</groupId>
   <artifactId>plus-framework</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  
-  
   
   <!-- Project Modules -->
   <modules>
   	<module>generic-services</module>
   	<module>generic-hibernate-dao</module>
+  	<module>seam3-parent</module>
   </modules>
   
   <!-- Project Informations -->	  
